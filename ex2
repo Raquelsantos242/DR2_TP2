@@ -1,0 +1,15 @@
+public class Desconto {
+
+    private static final double valor_minimo_desconto = 1000.0;
+    private static final double porcentagem_desconto = 0.9;
+    
+    public static double calcularPrecoComDesconto(double preco) {
+//tem que mudar pra >= pra incluir o 1000
+        return preco >= valor_minimo_desconto ? preco * porcentagem_desconto : preco;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Preço final: " + Desconto.calcularPrecoComDesconto(1000));
+    }
+}
