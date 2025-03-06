@@ -1,0 +1,14 @@
+public class Calculo {
+    //os nomes do metodo e das variaveis devem ser explicativos e precisos
+    public static int calcularDobroDaSoma(int primeiro_numero, int segundo_numero) {
+        int resultado_soma = primeiro_numero + segundo_numero;
+        return resultado_soma * 2;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+
+        int resultado = Calculo.calcularDobroDaSoma(5, 3);
+        System.out.println("O resultado é: " + resultado);
+    }
+}
