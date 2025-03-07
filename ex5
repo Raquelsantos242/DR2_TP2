@@ -1,0 +1,33 @@
+public class ClienteClassificador {
+
+    public String classificarCliente(int idade, double renda, int compras) {
+        if (idade > 60) {
+            return classificarSenior(renda, compras);
+        } else {
+            return classificarJovem(renda, compras);
+        }
+    }
+
+    private String classificarSenior(double renda, int compras) {
+        if (renda > 5000) {
+            return compras > 10 ? "Cliente Premium Sênior" : "Cliente Regular Sênior";
+        }
+        return "Cliente Sênior Baixa Renda";
+    }
+
+    private String classificarJovem(double renda, int compras) {
+        if (renda > 7000) {
+            return compras > 20 ? "Cliente Premium Jovem" : "Cliente Regular Jovem";
+        }
+        return "Cliente Jovem Baixa Renda";
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Classificação do cliente:");
+        System.out.println(new ClienteClassificador().
+                classificarCliente(25, 8000, 9));
+
+
+    }
+}
