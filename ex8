@@ -1,0 +1,38 @@
+public class ContaBancaria {
+    private double saldo;
+
+    public ContaBancaria(double saldoInicial) {
+
+        this.saldo = saldoInicial;
+    }
+    public boolean podeComprar(double valor) {
+
+        return saldo >= valor;
+    }
+    public void realizarCompra(double valor) {
+        if (podeComprar(valor)) {
+            saldo -= valor;
+            System.out.println("Compra realizada.");
+        } else {
+            System.out.println("Saldo insuficiente. Compra não realizada.");
+        }
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+
+        ContaBancaria conta = new ContaBancaria(50);
+
+        System.out.println("Tentando realizar uma compra de 30");
+        conta.realizarCompra(30);
+
+        System.out.println("Tentando realizar uma compra de 25 (deve falhar)");
+        conta.realizarCompra(25);
+
+        System.out.println("Saldo final: " + conta.getSaldo());
+    }
+}
