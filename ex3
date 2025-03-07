@@ -1,0 +1,48 @@
+public class Cliente {
+    private String nome;
+
+    public Cliente(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public boolean eNull() {
+        return false;
+    }
+}
+class NullCliente extends Cliente {
+    public NullCliente() {
+        super("Cliente Desconhecido");
+    }
+
+    @Override
+    public boolean eNull() {
+        return true;
+    }
+}
+public class Pedido {
+    private Cliente cliente;
+
+    public Pedido(Cliente cliente) {
+
+        this.cliente = (cliente != null) ? cliente : new NullCliente();
+    }
+
+    public String getNomeCliente() {
+
+        return cliente.getNome();
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+
+       Pedido pedido1 = new Pedido(new Cliente("João"));
+        System.out.println(pedido1.getNomeCliente());
+
+        Pedido pedido2 = new Pedido(null);
+        System.out.println(pedido2.getNomeCliente());
+    }
+}
