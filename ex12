@@ -15,8 +15,6 @@ public class NotificacaoService {
             case PUSH:
                 System.out.println("Enviando notificação push...");
                 break;
-            default:
-                throw new IllegalArgumentException("Tipo de notificação desconhecido");
         }
     }
 }
