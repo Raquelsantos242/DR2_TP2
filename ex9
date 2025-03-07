@@ -1,0 +1,33 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class FilaMensagens {
+    protected Queue<String> mensagens = new LinkedList<>();
+
+    public String visualizarProximaMensagem() {
+
+        return mensagens.peek();
+    }
+    public String obterProximaMensagem() {
+
+        return mensagens.poll();
+    }
+
+
+}
+public class Main {
+    public static void main(String[] args) {
+        FilaMensagens fila = new FilaMensagens();
+
+        fila.mensagens.add("primeira mensagem");
+        fila.mensagens.add("segunda mensagem");
+
+        System.out.println("Próxima mensagem: " + fila.visualizarProximaMensagem());
+
+       System.out.println("Próxima mensagem (removida  após visualização): " + fila.obterProximaMensagem());
+
+       System.out.println("Próxima mensagem (após remoção): " + fila.visualizarProximaMensagem());
+
+
+    }
+}
