@@ -1,0 +1,26 @@
+public class Monitoramento {
+    private int contadorAcessos = 0;
+
+    public void incrementarAcessos() {
+
+        contadorAcessos++;
+    }
+
+    public int getContadorAcessos() {
+
+        return contadorAcessos;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+
+        Monitoramento monitoramento = new Monitoramento();
+
+        monitoramento.incrementarAcessos();
+        monitoramento.incrementarAcessos();
+        monitoramento.incrementarAcessos();
+
+        System.out.println("Número de acessos: " + monitoramento.getContadorAcessos());
+
+    }
+}
