@@ -15,7 +15,7 @@ public class Cliente {
 }
 class NullCliente extends Cliente {
     public NullCliente() {
-        super("Cliente Desconhecido");
+        super("Cliente Vazio");
     }
 
     @Override
